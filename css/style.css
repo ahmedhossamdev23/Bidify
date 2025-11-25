@@ -1,0 +1,280 @@
+/* ============================================= */
+/*               BIDIFY – FINAL CSS              */
+/* ============================================= */
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  background:#f8f9fd; 
+  color:#2d3748; 
+  line-height:1.6; 
+  transition: background 0.4s, color 0.4s; 
+}
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+/* ==================== HEADER ==================== */
+.header {
+  background: linear-gradient(135deg, #a8edea 0%, #89cfff 40%, #6b9fff 100%);
+  color: #1a1a2e;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(100, 150, 255, 0.25);
+  border-bottom: 3px solid rgba(100, 200, 255, 0.4);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+.header.scrolled {
+  background: linear-gradient(135deg, 
+    rgba(168, 237, 234, 0.97) 0%, 
+    rgba(137, 207, 255, 0.97) 40%, 
+    rgba(107, 159, 255, 0.97) 100%
+  );
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(100, 150, 255, 0.3);
+}
+.header .container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+/* Logo */
+.logo { display: flex; align-items: center; text-decoration: none; }
+.bidify-logo {
+  height: 86px;
+  width: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+.bidify-logo:hover { transform: scale(1.12); }
+@media (max-width: 768px) { .bidify-logo { height: 56px; } }
+@media (max-width: 480px) { .bidify-logo { height: 48px; } }
+
+/* Navigation + Dark Mode Button */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav a { 
+  color: #1a1a2e; 
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 1.05rem;
+  transition: color 0.3s;
+}
+.nav a:hover { color: #0056b3; }
+
+/* DARK MODE BUTTON */
+.nav #darkModeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  color: #1a1a2e;
+}
+.nav #darkModeToggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+body.dark .nav #darkModeToggle { color: #e0f2fe; }
+body.dark .nav #darkModeToggle:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ==================== HERO ==================== */
+.hero { 
+  background: linear-gradient(135deg, #e0f5ff 0%, #c5e8ff 50%, #a8d8ff 100%);
+  color: #1a1a2e;
+  text-align: center;
+  padding: 5.5rem 0 4.5rem;
+}
+.hero h2 { 
+  font-size: 3.2rem;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.hero p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem; }
+
+/* Search Bar */
+.search-bar {
+  margin: 2.5rem auto 0;
+  display: flex;
+  gap: 0;
+  max-width: 680px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(100, 150, 255, 0.25);
+  background: white;
+}
+.search-bar input {
+  flex: 1;
+  padding: 18px 22px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+}
+.search-bar input::placeholder { color: #94a3b8; }
+.search-bar select {
+  padding: 18px 48px 18px 22px;
+  border: none;
+  background: #f0f7ff;
+  color: #1a1a2e;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 190px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236b9fff'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 18px;
+}
+@media (max-width: 768px) {
+  .search-bar { flex-direction: column; }
+  .search-bar input { border-bottom: 2px solid #bfdbfe; }
+  .search-bar select { border-radius: 0 0 16px 16px; }
+}
+
+/* ==================== LIVE AUCTIONS TITLE ==================== */
+.section-title { 
+  text-align: center; 
+  margin: 4.5rem 0 3rem; 
+  font-size: 2.5rem; 
+  color: #1a1a2e; 
+  font-weight: 700;
+  transition: color 0.4s ease;
+}
+
+/* BEAUTIFUL LIGHT COLOR IN DARK MODE */
+body.dark .section-title {
+  color: #c3dafe !important;           /* Soft sky blue – premium look */
+  text-shadow: 0 0 12px rgba(165, 180, 252, 0.35); /* Subtle glow */
+}
+
+/* ==================== AUCTION CARDS ==================== */
+.auction-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 2rem; 
+}
+.auction-card { 
+  background: white; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1); 
+  transition: 0.4s; 
+  position: relative; 
+  border: 1px solid #e2e8f0; 
+}
+.auction-card:hover { 
+  transform: translateY(-16px); 
+  box-shadow: 0 28px 55px rgba(100, 150, 255, 0.25); 
+}
+.auction-card img { width: 100%; height: 290px; object-fit: cover; }
+.auction-info { padding: 1.5rem; }
+.current-bid { font-size: 1.65rem; font-weight: bold; color: #e91e63; }
+.time-left { color: #ff6b00; font-weight: bold; font-size: 1.1rem; }
+.btn-primary { 
+  background: #e91e63; 
+  color: white; 
+  border: none; 
+  padding: 14px; 
+  border-radius: 12px; 
+  width: 100%; 
+  margin-top: 14px; 
+  font-size: 1.15rem; 
+  font-weight: bold; 
+  transition: all 0.3s; 
+}
+.btn-primary:hover { background: #c2185b; transform: translateY(-2px); }
+.watchlist-btn { 
+  position: absolute; top: 14px; right: 14px; 
+  background: rgba(0,0,0,0.5); color: white; 
+  border: none; width: 50px; height: 50px; border-radius: 50%; 
+  cursor: pointer; font-size: 1.4rem; 
+}
+.watchlist-btn.active { color: #e91e63; background: rgba(233,30,99,0.9); }
+
+/* ==================== MODAL ==================== */
+.modal { 
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  inset: 0; 
+  background: rgba(0,0,0,0.88); 
+  align-items: center; 
+  justify-content: center; 
+}
+.modal-content { 
+  background: white; 
+  padding: 3rem; 
+  border-radius: 20px; 
+  max-width: 560px; 
+  width: 92%; 
+  position: relative; 
+  text-align: center; 
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35); 
+}
+.close { 
+  position: absolute; 
+  top: 14px; 
+  right: 22px; 
+  font-size: 3rem; 
+  cursor: pointer; 
+  color: #aaa; 
+}
+
+/* ==================== DARK MODE ==================== */
+body.dark { background: #0f172a; color: #e2e8f0; }
+body.dark .header { 
+  background: linear-gradient(135deg, #1e293b 0%, #1e40af 50%, #3b82f6 100%); 
+  border-bottom: 3px solid rgba(100, 180, 255, 0.5); 
+}
+body.dark .header.scrolled { 
+  background: linear-gradient(135deg, rgba(30,41,59,0.97) 0%, rgba(30,64,175,0.97) 50%, rgba(59,130,246,0.97) 100%); 
+  backdrop-filter: blur(18px); 
+}
+body.dark .hero { 
+  background: linear-gradient(135deg, #172554 0%, #1e3a8a 60%, #1e40af 100%); 
+  color: #e0f2fe; 
+}
+body.dark .hero h2 { 
+  background: linear-gradient(90deg, #60a5fa, #93c5fd); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+body.dark .auction-card, 
+body.dark .modal-content { 
+  background: #1e293b; 
+  border: 1px solid #334155; 
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5); 
+}
+body.dark .search-bar { 
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5); 
+  background: #1e293b; 
+}
+body.dark input, 
+body.dark select { 
+  background: #1e293b; 
+  border: 1px solid #475569; 
+  color: #e2e8f0; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h2 { font-size: 2.5rem; }
+  .nav { gap: 1.2rem; }
+  .nav a { font-size: 0.95rem; }
+}

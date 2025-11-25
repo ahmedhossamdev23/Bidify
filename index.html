@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bidify - Online Auction</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="images/Bidify_Logo_More_Catchy-removebg-preview.png" alt="Bidify Logo" class="bidify-logo">
+      </a>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Auctions</a>
+        <a href="#">How it Works</a>
+        <a href="#">Contact</a>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2>Discover & Bid on Amazing Items</h2>
+      <p>Join thousands of bidders in real-time auctions</p>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search auctions, items, sellers..." />
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="art">Art & Collectibles</option>
+          <option value="fashion">Fashion</option>
+          <option value="vehicles">Vehicles</option>
+          <option value="jewelry">Jewelry</option>
+          <option value="realestate">Real Estate</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auctions -->
+  <section class="auctions container">
+    <h2 class="section-title">Live Auctions</h2>
+    <div class="auction-grid" id="auctionGrid"></div>
+  </section>
+
+  <!-- Bid Modal (only appears when you click an item) -->
+  <!-- Bid Modal – HIDDEN BY DEFAULT (this is the fix!) -->
+<div class="modal" id="bidModal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">×</span>
+    <h2 id="modalTitle"></h2>
+    <img id="modalImage" src="" alt="" />
+    <p>Current Bid: <strong id="modalCurrentBid">$0</strong></p>
+    <p>Time Left: <span id="modalTimer"></span></p>
+    <div class="bid-input">
+      <input type="number" id="bidAmount" placeholder="Enter your bid" min="1" step="1"/>
+      <button class="btn-primary" id="placeBidBtn">Place Bid</button>
+    </div>
+    <p class="bid-message" id="bidMessage"></p>
+  </div>
+</div>
+
+  <!-- Only one script – our own main.js -->
+  <script src="js/main.js"></script>
+</body>
+</html>
