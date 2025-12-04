@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Auctions - Bidify</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <!-- Your Styles -->
+  <link rel="stylesheet" href="css/my-auctions.css" />
+</head>
+<body>
+
+  <header class="header">
+  <div class="container header-content">
+    <h2>My Auctions</h2>
+    <a href="index.html" class="back-home-btn">
+      Back to Home
+    </a>
+  </div>
+</header>
+
+  <!-- Add New Auction Form -->
+  <section class="container">
+    <h3>Add a New Auction</h3>
+    <form id="addAuctionForm">
+      <label>Title:</label>
+      <input type="text" id="auctionTitle" required />
+
+      <label>Description:</label>
+      <textarea id="auctionDescription" required></textarea>
+
+      <label>Category:</label>
+      <select id="auctionCategory" required>
+        <option value="" disabled selected>Select category</option>
+        <option value="electronics">Electronics</option>
+        <option value="art">Art & Collectibles</option>
+        <option value="fashion">Fashion</option>
+        <option value="vehicles">Vehicles</option>
+        <option value="jewelry">Jewelry</option>
+        <option value="realestate">Real Estate</option>
+      </select>
+
+      <label>Image:</label>
+      <input type="file" id="auctionImageFile" accept="image/*" required />
+
+      <label>Starting Bid ($):</label>
+      <input type="number" id="startingBid" min="1" required />
+
+      <label>Time Left (minutes):</label>
+      <input type="number" id="timeLeft" min="1" value="10" required />
+
+      <button type="submit">Create Auction</button>
+    </form>
+  </section>
+
+  <!-- Auctions List -->
+  <section class="container">
+    <h3>My Auctions List</h3>
+    <div id="auctionGrid"></div>
+  </section>
+
+  <!-- Bid Modal -->
+  <div class="modal" id="bidModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">×</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="" />
+      <p>Current Bid: <strong id="modalCurrentBid">$0</strong></p>
+      <p>Time Left: <span id="modalTimer"></span></p>
+      <input type="number" id="bidAmount" placeholder="Enter your bid" min="1" step="1"/>
+      <button id="placeBidBtn">Place Bid</button>
+      <p id="bidMessage"></p>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="js/my-auctions.js"></script>
+</body>
+</html>
