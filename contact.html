@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Bidify</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Main Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e6f0ff;  
+      color: #003366; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .auth-box {
+      background: #ffffff; 
+      border-radius: 15px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      color: #003366; 
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cce0ff;
+      margin: 25px 0;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #cce0ff;
+      outline: none;
+      font-size: 16px;
+      color: #003366;
+      background: #f0f8ff;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #66a3ff;
+    }
+
+    .btn-primary {
+      background: #0073e6;
+      border: none;
+      color: #fff;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #005bb5;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .auth-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="auth-box">
+    <h2>Contact Us</h2>
+
+    <p style="text-align:center;">
+      Have questions or need support? We’re here to help.
+    </p>
+
+    <h3>📞 Phone</h3>
+    <p>+20 100 000 0000</p>
+
+    <h3>📧 Email</h3>
+    <p>support@bidify.com</p>
+
+    <h3>📍 Location</h3>
+    <p>Cairo, Egypt</p>
+
+    <!-- Google Map Embed -->
+    <div style="margin:20px 0; border-radius:12px; overflow:hidden;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.123456789!2d31.2345678!3d30.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458412345678901%3A0xabcdef1234567890!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <h3>🕒 Working Hours</h3>
+    <p>Saturday – Thursday: 10 AM – 8 PM</p>
+
+    <hr>
+
+    <h3>Send Us a Message</h3>
+    <form id="contactForm">
+      <input id="contactName" type="text" placeholder="Your Name" required>
+      <input id="contactEmail" type="email" placeholder="Your Email" required>
+      <textarea id="contactMessage" placeholder="Your Message" required style="height:120px;"></textarea>
+      <button class="btn-primary" type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Your message has been sent successfully!");
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+</body>
+</html>
