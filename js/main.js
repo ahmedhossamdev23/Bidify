@@ -5,7 +5,7 @@
 const auctions = [
   { id:1, title:"iPhone 15 Pro Max", image:"https://www.dxomark.com/wp-content/uploads/medias/post-155689/Apple-iPhone-15-Pro-Max_-blue-titanium_featured-image-packshot-review.jpg", currentBid:850, category:"electronics", endTime: Date.now() + 2*60*60*1000 },
   { id:2, title:"Original Picasso Sketch", image:"https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500", currentBid:12500, category:"art", endTime: Date.now() + 24*60*60*1000 },
-  { id:3, title:"Rolex Submariner 2024", image:"https://regalhattongarden.co.uk/cdn/shop/files/IMG_1115.heic?v=1709907590&width=550", currentBid:9800, category:"fashion", endTime: Date.now() + 5*60*60*1000 },
+  { id:3, title:"Rolex Submariner 2024", image:"https://www.luxurybazaar.com/grey-market/wp-content/uploads/2024/02/ROLEX_124060_2-1536x1025.jpg", currentBid:9800, category:"fashion", endTime: Date.now() + 5*60*60*1000 },
   { id:4, title:"Tesla Model S Plaid", image:"https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22264050/Screen_Shot_2021_01_27_at_3.26.14_PM.png?quality=90&strip=all&crop=11.306818181818%2C0%2C77.386363636364%2C100&w=2400", currentBid:75000, category:"vehicles", endTime: Date.now() + 48*60*60*1000 },
   { id:5, title:"MacBook Pro M3 Max", image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500", currentBid:2100, category:"electronics", endTime: Date.now() + 3*60*60*1000 },
   { id:6, title:"Vintage Wine Collection", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD3zfHUFMzRxwYonoG8Ci2aTOdUQor7Al_NQ&s", currentBid:3200, category:"art", endTime: Date.now() + 12*60*60*1000 },
