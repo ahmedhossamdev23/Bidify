@@ -7,6 +7,38 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
+<!-- ========== LOGIN / SIGNUP POPUP ========== -->
+<div id="authModal" class="auth-modal">
+  <div class="auth-content">
+    <span class="close-auth">&times;</span>
+
+    <h2 id="authTitle">Login</h2>
+
+    <div class="auth-forms">
+      <!-- LOGIN FORM -->
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit" class="btn-primary">Login</button>
+        <p class="switch-text">
+          Don't have an account? <span id="showSignup" class="switch-btn">Sign Up</span>
+        </p>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form id="signupForm" style="display:none;">
+        <input type="text" id="signupName" placeholder="Full Name" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <button type="submit" class="btn-secondary">Sign Up</button>
+        <p class="switch-text">
+          Already have an account? <span id="showLogin" class="switch-btn">Login</span>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <body>
 
   <!-- ========== PERFECT HEADER WITH FULL NAV + WORKING DROPDOWN ========== -->
@@ -27,7 +59,7 @@
             Auctions <i class="fas fa-chevron-down"></i>
           </a>
           <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">
+            <a href="all-auctions.html" class="dropdown-item">
               <i class="fas fa-gavel"></i> All Auctions
             </a>
             <a href="my-auctions.html" class="dropdown-item">
@@ -37,8 +69,9 @@
         </div>
 
         <a href="how-it-works.html" class="nav-link">How It Works</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href ="#sign-up/login" class="btn btn-secondary nav-link">Signup/Login</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <a href ="login.html" class="btn btn-secondary nav-link">Signup/Login</a>
 
         <!-- Dark Mode Toggle -->
         <button id="darkModeToggle" aria-label="Toggle Dark Mode">
